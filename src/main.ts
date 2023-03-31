@@ -6,7 +6,7 @@ async function run(): Promise<void> {
   try {
     const username: string = core.getInput('mega_username')
     const password: string = core.getInput('mega_password')
-    const path: string = core.getInput('local')
+    const path: string = core.getInput('path')
     const remote: string = core.getInput('remote')
     if (!username) {
       throw new Error('mega_username is required')
