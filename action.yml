@@ -1,5 +1,5 @@
 name: '@g3ngar/mega-put'
-description: 'upload stuff to MEGA'
+description: 'Upload stuff to MEGA'
 author: 'g3ngar'
 inputs:
   mega_username:
