@@ -50,7 +50,7 @@ function run() {
         try {
             const username = core.getInput('mega_username');
             const password = core.getInput('mega_password');
-            const path = core.getInput('local');
+            const path = core.getInput('path');
             const remote = core.getInput('remote');
             if (!username) {
                 throw new Error('mega_username is required');
