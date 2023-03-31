@@ -1,16 +1,27 @@
 import * as core from '@actions/core'
-import {wait} from './wait'
+import put from './put'
+import {resolve} from 'path'
 
 async function run(): Promise<void> {
   try {
-    const ms: string = core.getInput('milliseconds')
-    core.debug(`Waiting ${ms} milliseconds ...`) // debug is only output if you set the secret `ACTIONS_STEP_DEBUG` to true
-
-    core.debug(new Date().toTimeString())
-    await wait(parseInt(ms, 10))
-    core.debug(new Date().toTimeString())
-
-    core.setOutput('time', new Date().toTimeString())
+    const username: string = core.getInput('mega_username')
+    const password: string = core.getInput('mega_password')
+    const path: string = core.getInput('local')
+    const remote: string = core.getInput('remote')
+    if (!username) {
+      throw new Error('mega_username is required')
+    }
+    if (!password) {
+      throw new Error('mega_password is required')
+    }
+    if (!path) {
+      throw new Error('path is required')
+    }
+    if (!remote) {
+      throw new Error('remote is required')
+    }
+    const file = await put(username, password, resolve(path), remote)
+    core.notice(`Download link: ${file}`)
   } catch (error) {
     if (error instanceof Error) core.setFailed(error.message)
   }

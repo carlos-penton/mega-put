@@ -1,11 +1,22 @@
-name: 'Your name here'
-description: 'Provide a description here'
-author: 'Your name or organization here'
+name: '@g3ngar/mega-put'
+description: 'upload stuff to MEGA'
+author: 'g3ngar'
 inputs:
-  milliseconds: # change this
+  mega_username:
     required: true
-    description: 'input description here'
-    default: 'default value if applicable'
+    description: 'MEGA email'
+  mega_password:
+    required: true
+    description: 'MEGA password'
+  path:
+    required: true
+    description: 'File or directory to upload'
+  remote:
+    required: true
+    description: 'Name of the .tar file in MEGA where the uploaded content will be. Note this will be in the root directory.'
 runs:
   using: 'node16'
   main: 'dist/index.js'
+branding:
+  icon: 'upload-cloud'
+  color: 'red'
