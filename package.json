@@ -1,8 +1,8 @@
 {
-  "name": "typescript-action",
+  "name": "@g3ngar/mega-put",
   "version": "1.0.0",
   "private": true,
-  "description": "TypeScript template action",
+  "description": "Upload stuff to MEGA",
   "main": "lib/main.js",
   "scripts": {
     "build": "tsc",
@@ -15,7 +15,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/actions/typescript-action.git"
+    "url": "git+https://github.com/g3ngar/mega-put.git"
   },
   "keywords": [
     "actions",
@@ -44,5 +44,8 @@
     "prettier": "2.5.1",
     "ts-jest": "^27.1.2",
     "typescript": "^4.4.4"
+  },
+  "engines": {
+    "node": "16"
   }
 }
